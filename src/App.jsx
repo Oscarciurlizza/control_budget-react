@@ -44,7 +44,7 @@ const App = () => {
   useEffect(() => {
     const budgetLs = Number(localStorage.getItem('budget')) ?? 0;
     const userLs = localStorage.getItem('user') ?? [];
-    if (budgetLs > 0 && !userLs.includes(user)) {
+    if (budgetLs > 0 || !userLs.includes(user)) {
       setIsValidBudget(true)
       setIsValidUser(true);
     }
